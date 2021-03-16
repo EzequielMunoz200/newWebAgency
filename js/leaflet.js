@@ -11,7 +11,7 @@ const Leaflet = () => {
         id: 'mapbox/streets-v11',
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: 'token'
+        accessToken: 'pk.eyJ1IjoiZW1lemVxMjAwIiwiYSI6ImNrbTdvcTIzZDEwNGoydm54dXVxeDlrMmkifQ.1sRsVzCRIcTvpqbi6sLP0A'
     }).addTo(mymap);
 
     var marker = L.marker([48.87317879924017, 2.3499006999513123]).addTo(mymap);
