@@ -1,0 +1,114 @@
+.menu {
+  position: fixed;
+  width: 100%;
+  background-color: $widgets;
+  text-align: left;
+  z-index: 1000;
+  overflow: hidden;
+  max-height: 90vh;
+  top: -115px;
+
+  /* @media (max-width: 900px) and (orientation: landscape) {
+    height: 234px;
+    overflow: hidden;
+  } */
+
+ /*  @media (min-width: 1024px) {
+    visibility: hidden;
+  } */
+
+  .main-nav {
+    ul {
+      padding: 0;
+    }
+    &__item {
+      font-size: 1rem;
+      list-style: none;
+      width: 100%;
+
+      a {
+        color: $back;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        padding: 10px 38px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.hide-menu {
+  animation: roule 0.3s ease;
+  animation-fill-mode: forwards;
+}
+
+.show-menu {
+  @media (max-width: 1024px) {
+    visibility: visible;
+    animation: deroule 0.3s ease-out;
+    animation-fill-mode: forwards;
+    width: 100vw;
+  }
+}
+
+@keyframes deroule {
+  0% {
+    transform: translateY(-100%);
+    left: 0px;
+  }
+
+  100% {
+    transform: translateY(1%);
+    left: 0px;
+    top: 64px;
+  }
+}
+
+@keyframes roule {
+  0% {
+    transform: translateY(-1%);
+    left: 0px;
+    top: 64px;
+  }
+
+  100% {
+    transform: translateY(-140%);
+    left: 0px;
+    visibility: hidden;
+  }
+}
+
+.menu-icon {
+  display: block;
+  color: $widgets;
+  font-size: $font-size-large;
+
+  @media (min-width: 950px) {
+    display: none;
+  }
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 30px;
+  height: 3px;
+  background-color: $widgets;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: rotate(-45deg) translate(-5px, 3px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  transform: rotate(45deg) translate(-9px, -8px);
+}

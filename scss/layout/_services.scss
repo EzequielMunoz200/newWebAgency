@@ -1,0 +1,226 @@
+#services:target {
+  padding-top: 5em;
+  margin-top: 2em
+}
+.services {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: $back;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
+
+  &__header {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+
+  &__main {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    margin-top: 5%;
+  }
+
+  &__content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+  }
+
+  &__image {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  &__list {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  &__item {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 10% 1fr;
+    grid-template-rows: 10% 1fr;
+    column-gap: 20px;
+    min-width: 383px;
+    .icon {
+      grid-column: 1;
+      grid-row: 1;
+      width: 2.5rem;
+      height: 2.5rem;
+      border: $bordure;
+      border-radius: 50%;
+      position: relative;
+      .fa {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        color: $widgets;
+      }
+
+      .circle-white {
+        position: relative;
+        background-color: $back;
+        width: 14px;
+        height: 25px;
+        margin: auto;
+        z-index: 2;
+        left: 23px;
+        bottom: 35px;
+      }
+
+      .circle-blue {
+        position: absolute;
+        background-color: $widgets;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        margin: auto;
+        z-index: 2;
+        left: 33px;
+        bottom: 16px;
+      }
+    }
+
+    .item__label {
+      grid-column: 2;
+      grid-row: 1;
+      font-weight: 700;
+    }
+    .item__content {
+      grid-column: 2;
+      grid-row: 2;
+      margin-top: 0.5rem;
+      font-weight: 400;
+      font-size: $text;
+      color: $gray;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .services {
+    max-width: 100%;
+    height: auto;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: .1fr .1fr;
+
+    &__header {
+      grid-column: 1;
+      grid-row: 1;
+      margin: 0;
+    }
+
+    &__main {
+      grid-column: 1;
+      grid-row: 2;
+      /* margin-top: 5%; */
+    }
+
+    &__content {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.4fr 1fr;
+    }
+
+    &__image {
+      grid-column: 1;
+      grid-row: 1;
+      img {
+        display: flex;
+        margin: auto;
+        max-width: 90%;
+      }
+    }
+
+    &__list {
+      grid-column: 1;
+      grid-row: 2;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      padding: 0;
+      width: min-content;
+    }
+
+    &__item {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.3fr 0.3fr 0.3fr;
+      margin: auto;
+      align-content: center;
+      justify-items: center;
+      text-align: justify;
+      .icon {
+        grid-column: 1;
+        grid-row: 1;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: $bordure;
+        border-radius: 50%;
+        position: relative;
+        margin-bottom: 10px;
+        .fa {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 1rem;
+          color: $widgets;
+        }
+
+        .circle-white {
+          position: relative;
+          background-color: $back;
+          width: 1rem;
+          height: 1rem;
+          margin: auto;
+          z-index: 2;
+          left: 20px;
+          bottom: 29px;
+        }
+
+        .circle-blue {
+          position: absolute;
+          background-color: $widgets;
+          border-radius: 50%;
+          width: 0.5rem;
+          height: 0.5rem;
+          margin: auto;
+          z-index: 2;
+          left: 36px;
+          bottom: 17px;
+        }
+      }
+
+      .item__label {
+        grid-column: 1;
+        grid-row: 2;
+        font-weight: 700;
+      }
+      .item__content {
+        grid-column: 1;
+        grid-row: 3;
+        margin-top: 0.5rem;
+        font-weight: 400;
+        font-size: $text;
+        color: $gray;
+        max-width: 90%;
+      }
+    }
+  }
+}

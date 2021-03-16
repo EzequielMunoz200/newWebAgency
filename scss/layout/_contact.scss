@@ -1,0 +1,153 @@
+#contact:target {
+  padding-top: 5em;
+  margin-top: 2em
+}
+.contact {
+  grid-column: 1;
+  grid-row: 4;
+
+  &__main {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 2rem;
+    margin: 0 2rem;
+  }
+
+  &__map {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  &__form {
+    grid-column: 3;
+    grid-row: 1;
+    box-sizing: border-box;
+    width: 100%;
+
+    .form-title {
+      font-weight: 400;
+      padding: 0 2rem 0 0;
+      font-size: $big-title;
+      margin: 0;
+    }
+
+    .form-subtitle {
+      font-weight: 700;
+      font-size: $sub-title;
+      color: $gray;
+      margin: 0;
+    }
+
+    .form-address,
+    .form-tel {
+      font-weight: 400;
+      font-size: $text;
+      color: $gray;
+      margin: 0;
+    }
+
+    .form-tel {
+      padding: 0 0 0.1rem 0;
+    }
+
+    .form-tel a:link {
+      text-decoration: none;
+      color: $gray;
+    }
+
+    .form-tel a:visited {
+      text-decoration: none;
+    }
+
+    .dots {
+      border-bottom: 1px dotted;
+    }
+
+    .in-text,
+    .in-text-area {
+      border: none;
+      padding: 5px 10px;
+      font-weight: bold;
+      color: $gray;
+      display: flex;
+      width: 100%;
+      margin: auto;
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 3px;
+      border: 1px solid lightgray;
+      resize: none;
+      box-sizing: border-box;
+    }
+
+    .in-text {
+      margin-bottom: 0px;
+    }
+
+    .in-text-area {
+      min-height: 8rem;
+      max-height: 8rem;
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+    }
+
+    .btn-send-message {
+      border: none;
+      border-radius: 3px;
+      padding: 0.5rem 1rem;
+      background-color: $widgets;
+      border-bottom: 3px solid darken($widgets, 20);
+      color: $back;
+      font-weight: 900;
+      cursor: pointer;
+      width: auto;
+      height: 2.5rem;
+    }
+
+    .btn-send-message:active {
+      transform: scale(1.02);
+    }
+
+    label[for='form-nom'],
+    label[for='form-email'],
+    label[for='form-objet'],
+    label[for='form-message'] {
+      color: transparent;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .contact {
+    &__main {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.4fr 1fr;
+      row-gap: 2rem;
+      margin: 0 2rem;
+    }
+
+    &__map {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    &__form {
+      grid-column: 1;
+      grid-row: 2;
+      
+      /* max-width: 90%; */
+      .btn-send-message {
+        width: 100%;
+      }
+    }
+  }
+}
+
+#mapid {
+  height: 100%;
+}

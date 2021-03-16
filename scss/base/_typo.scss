@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap');
+
+html,
+body {
+    scroll-behavior: smooth;
+    font-size: $font-size!important;
+
+    @media(min-width: $bp-medium) {
+        font-size: $font-size-medium;
+        $text: 1rem!important;
+    }
+
+    @media(min-width: $bp-large) {
+        font-size: $font-size-large;
+    }
+
+   /*  @media(min-width: $bp-x-large) {
+        font-size: $font-size-display;
+    } */
+}
+
+
+body,
+a {
+    font-family: $font-family-content, $font-family-fallback;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: $font-family-title, $font-family-fallback;
+}

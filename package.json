@@ -1,0 +1,18 @@
+{
+  "name": "webagency",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ezequiel Munoz",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "men": "^2.2.1"
+  }
+}
